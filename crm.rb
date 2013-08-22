@@ -1,8 +1,11 @@
 puts "found crm file"
 require "Contact"
-
+require "Database"
+@database = Database.new
 
 class CRM
+
+	
 
 	def initialize(name = "default")
 		@name = name
@@ -42,8 +45,12 @@ def what_is_the_name_of_this_CRM_again
 
 	def add_new_contact
 		contact = Contact.new
-		contact.input_new_contact
+		puts contact.inspect
+		#contact.input_new_contact
+		add_contact_to_db(contact)
 		contact.display_new_contact
+		
+		
 	end
 
 	def  modify_existing_contact 

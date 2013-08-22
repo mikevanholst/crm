@@ -1,39 +1,36 @@
-puts "found Database file"
 
 
-class Database
 
-  @contacts_list = []
+class Database 
+
+def initialize 
+  @contacts = [["first","last","email","note"]]
   @id = 1000
+ end 
 
   def add_contact_to_db(contact)
-    contact_id = @id
-    @contacts_list << contact
+    @contact_id = @id
+    @contacts << contact
     @id += 1
   end
 
-  def self.contacts
-    @contacts
+  def contacts
+   
+    puts @contacts.inspect
   end
+
+
+
 end
 
-puts "ended database file"
-
-test_db = Database.new
 
 
+name = "mike"
+last = "vh"
+my_contact = [name, last]
 
+db = Database.new
 
+db.add_contact_to_db(my_contact)
 
-
-# puts test_db
-
-
-
-test_db.add_contact("mvanTest")
-@contacts_list
-# puts test_db.id
-
-# @contacts_list 
-
-#puts "id is #{@id}"
+db.contacts

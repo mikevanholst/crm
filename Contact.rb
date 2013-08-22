@@ -4,7 +4,7 @@ class Contact
 
 	attr_accessor :first_name, :last_name, :email, :note
 
-	def initialize(first_name = "first", last_name = "last", email= "", note= "")
+	def initialize(first_name = "crusty", last_name = "clown", email= "FUNNY@EMAIL.COM", note= "	I HATE CLOWNS")
 	    @first_name = first_name
 	    @last_name = last_name
 	    @email = email
