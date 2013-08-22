@@ -1,4 +1,6 @@
 puts "found crm file"
+require "Contact"
+
 
 class CRM
 
@@ -30,14 +32,40 @@ def what_is_the_name_of_this_CRM_again
 
 
 	def call_option(user_selected)
-	  #add_new_contact if user_selected == 1
-	  puts "Booya!" if user_selected == 1
+	  add_new_contact if user_selected == 1
 	  modify_existing_contact if user_selected == 2
 	  delete_contact if user_selected == 3
 	  display_contacts if user_selected == 4
 	  display_attribute if user_selected == 5
 	  exit_crm if user_selected == 6
 	 end
+
+	def add_new_contact
+		contact = Contact.new
+		contact.input_new_contact
+		contact.display_new_contact
+	end
+
+	def  modify_existing_contact 
+
+	end
+	  
+	  def delete_contact 
+
+	  end
+
+	  def display_contacts 
+
+	  end
+	  
+	  def display_attribute 
+
+	  end
+
+	  def exit_crm
+	  	puts "Thank you for using the #{@name} CRM"
+	  	return
+	  end
 
 end
 
