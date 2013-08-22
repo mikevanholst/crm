@@ -2,7 +2,7 @@ puts "found contacts file"
 
 class Contact
 
-	attr_accessor :first_name, :last_name, :email, :note
+	attr_accessor :id, :first_name, :last_name, :email, :note, :contact_array
 
 	def initialize(first_name = "crusty", last_name = "clown", email= "FUNNY@EMAIL.COM", note= "	I HATE CLOWNS")
 	    @first_name = first_name
@@ -11,6 +11,9 @@ class Contact
 	    @note = note
 	  end
 
+	  def id=(assigned_id)
+	  	@id = assigned_id
+	  end
 
 	def input_new_contact
 
@@ -25,6 +28,22 @@ class Contact
 	  	
 	  	print "Enter a Note: "
 	  	@note = gets.chomp
+	end
+
+def create_new_contact_array
+		p "entered create_new_contact_array"
+		@contact = Contact.new
+		puts @contact.inspect
+		@contact.create_array
+
+		 # puts "complets create_new_contact_array"
+	end	 
+
+
+
+	def create_array
+		@contact_array = [@contact.first_name,@contact.last_name,@contact.email,@contact.note]
+		puts @contact_array.inspect
 	end
 
 	def display_new_contact

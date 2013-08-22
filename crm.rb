@@ -44,14 +44,28 @@ def what_is_the_name_of_this_CRM_again
 	 end
 
 	def add_new_contact
-		contact = Contact.new
-		puts contact.inspect
+		create_new_contact_array
 		#contact.input_new_contact
-		add_contact_to_db(contact)
-		contact.display_new_contact
+		#Database.test_m
+		#Database.add_contact_to_db(contact)
+		#Database.contacts
+		#contact.display_new_contact
 		
 		
 	end
+
+def create_new_contact_array
+		p "entered create_new_contact_array"
+		@contact = Contact.new
+		puts @contact.inspect
+		@contact.create_array
+
+		 # puts "complets create_new_contact_array"
+	end	 
+
+	
+
+
 
 	def  modify_existing_contact 
 
